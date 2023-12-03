@@ -14,13 +14,11 @@
 <body>
     <h1>paiza bbs</h1>
     <p>{{ $message }}</p>
-    @foreach ($articles as $article)
+    <p>{{ $article->content }}</p>
+
     <p>
-        <a href='{{ route("article.show", ["id" => $article->id]) }}'>
-        {{ $article->content }}
-        </a>
+        <a href="{{ route('article.list') }}">一覧に戻る</a>
     </p>
-    @endforeach
 </body>
 
 </html>
