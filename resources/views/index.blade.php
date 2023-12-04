@@ -17,7 +17,8 @@
     @foreach ($articles as $article)
     <p>
         <a href='{{ route("article.show", ["id" => $article->id]) }}'>
-        {{ $article->content }}
+            {{ $article->content }} 
+            {{ $article->user_name }}
         </a>
     </p>
     @endforeach
