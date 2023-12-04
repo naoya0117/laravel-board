@@ -7,11 +7,11 @@
     <p>{{ $article->user_name }}</p>
 
     <p>
-        <a href="{{ route('article.list') }}">一覧に戻る</a>
+        <a href={{ route('article.list') }} class='btn btn-outline-primary'>一覧に戻る</a>
     </p>
     <form method="POST" action="{{ route('article.delete', $article->id) }}">
         @csrf
         @method('DELETE')
-        <input type="submit" value="削除">
+        <input type="submit" value="削除" class='btn btn-outline-secondary'>
     </form>
 @endsection
