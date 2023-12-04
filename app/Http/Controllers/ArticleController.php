@@ -67,8 +67,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Article $article)
+    public function destroy(Request $request, $id, Article $article)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+        return redirect('/articles');
     }
 }
