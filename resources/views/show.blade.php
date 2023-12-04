@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('layout')
 
-<head>
-    <meta charset='utf-8'>
-    <title>paiza bbs</title>
-    <style>
-        body {
-            padding: 10px;
-        }
-    </style>
-</head>
-
-<body>
+@section('content')
     <h1>paiza bbs</h1>
     <p>{{ $message }}</p>
     <p>{{ $article->content }}</p>
@@ -25,6 +14,4 @@
         @method('DELETE')
         <input type="submit" value="削除">
     </form>
-</body>
-
-</html>
+@endsection
