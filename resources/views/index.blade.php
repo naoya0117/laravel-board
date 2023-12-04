@@ -3,6 +3,7 @@
 @section('content')
     <h1>paiza bbs</h1>
     <p>{{ $message }}</p>
+    @include('search')
     <table class="table table-striped tabble-hover">
         @foreach ($articles as $article)
             <tr>
