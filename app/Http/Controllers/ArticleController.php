@@ -28,12 +28,8 @@ class ArticleController extends Controller
      */
     public function create(Request $request)
     {
-        $article = new Article();
-
-        $article->content = 'Hello BBS';
-        $article->user_name = 'paiza';
-        $article->save();
-        return redirect('/articles');
+        $message = 'New article';
+        return view('new', ['message' => $message]);
     }
 
     /**
@@ -41,7 +37,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = new Article();
+
+        $article->content = 'Hello BBS';
+        $article->user_name = 'paiza';
+        $article->save();
+        return redirect('/articles');
     }
 
     /**
