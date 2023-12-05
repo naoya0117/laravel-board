@@ -8,11 +8,11 @@
         @method('PUT')
         <div class='form-group'>
             <label for="content">Content:</label>
-            <input type="text" id="content" name="content" value="{{ $article->content}}">
+            <input type="text" id="content" name="content" value="{{ $article->content}}" required>
         </div>
         <div class='form-group'>
             <label for="user_name">Name:</label>
-            <input type="text" id="user_name" name="user_name" value="{{ $article->user_name}}">
+            <input type="text" id="user_name" name="user_name" value="{{ $article->user_name}}" required>
         </div>
         <div class="form-group">
             <input type="submit" value="保存する" class="btn btn-primary">

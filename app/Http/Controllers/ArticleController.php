@@ -69,11 +69,16 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id, Article $article)
     {
-        //
-    }
+        $article = Article::find($id);
 
+        $article->content = $request->input('content');
+        $article->user_name = $request->input('user_name');
+        $article->save();
+        
+        return redirect()->route('article.show', ['id' => $article->id]);
+    }
     /**
      * Remove the specified resource from storage.
      */

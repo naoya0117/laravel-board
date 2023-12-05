@@ -7,11 +7,11 @@
         @csrf
         <div class='form-group'>
             <label for="content">Content:</label>
-            <input type="text" id="content" name="content">
+            <input type="text" id="content" name="content" required>
         </div>
         <div class='form-group'>
             <label for="user_name">Name:</label>
-            <input type="text" id="user_name" name="user_name">
+            <input type="text" id="user_name" name="user_name" required>
         </div>
         <div class="form-group">
             <input type="submit" value="作成する" class="btn btn-primary">
