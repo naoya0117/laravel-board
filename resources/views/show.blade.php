@@ -8,6 +8,7 @@
 
     <p>
         <a href={{ route('article.list') }} class='btn btn-outline-primary'>一覧に戻る</a>
+        <a href="{{route('article.edit', ['id' => $article->id])}}" class='btn btn-outline-primary'>編集</a>
     </p>
     <form method="POST" action="{{ route('article.delete', $article->id) }}">
         @csrf
