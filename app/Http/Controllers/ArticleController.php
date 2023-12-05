@@ -10,10 +10,16 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $message = 'welcome to my BBS';
-        $articles = Article::all();
+        if ($request->filled('keyword')) {
+            $keyword = $request->input('keyword');
+            $message = 'Welcome to my BBS: ' . $keyword;
+            $articles = Article::where('content', 'like', '%'. $keyword . '%')->get();
+        } else {
+            $message = 'welcome to my BBS';
+            $articles = Article::all();
+        }
         return view('index', ['message' => $message, 'articles' => $articles]);
     }
 
