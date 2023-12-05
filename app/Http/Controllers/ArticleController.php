@@ -39,10 +39,11 @@ class ArticleController extends Controller
     {
         $article = new Article();
 
-        $article->content = 'Hello BBS';
-        $article->user_name = 'paiza';
+        $article->content = $request->input('content');
+        $article->user_name = $request->input('user_name');
         $article->save();
-        return redirect('/articles');
+        
+        return redirect()->route('article.show', ['id' => $article->id]);
     }
 
     /**
